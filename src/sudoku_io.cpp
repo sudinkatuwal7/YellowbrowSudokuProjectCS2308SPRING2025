@@ -1,3 +1,7 @@
+//Group name: YellowbrowSudokuProjectCS2308SPRING2025
+//Members: Sudin Katuwal, Sugam Pandey, Nischal Rimal
+
+
 //
 // Created by Keshav Bhandari on 2/7/24.
 //
@@ -182,13 +186,17 @@ void createAndSaveNPuzzles(const int& num_puzzles, const int& complexity_empty_b
         string filename = getFileName(i, destination, prefix);
         if(writeSudokuToFile(BOARD, filename)){
             total_success++;
-            cout << "Successfully written(" << filename << ") "<< total_success << "of " << num_puzzles << endl;
+            cout << "Successfully written(" << filename << ") "<< total_success << " of " << num_puzzles << endl;
         }else{
-            cout << "!! Failed to write(" << filename << ") "<< total_success << "of " << num_puzzles << endl;
+            cout << "!! Failed to write(" << filename << ") "<< total_success << " of " << num_puzzles << endl;
         }
+        // Deallocate memory for the board after it is no longer needed
+        deallocateBoard(BOARD);    // Free memory allocated for the board
+        BOARD = nullptr;           // Prevent dangling pointer (good practice)
     }
-    cout << total_success << " files written out of " << num_puzzles <<endl;
+    cout << total_success << " files written out of " << num_puzzles << endl;
 }
+
 
 
 // Function to display a progress bar in the console
@@ -243,8 +251,12 @@ void solveAndSaveNPuzzles(const int &num_puzzles, const string& source, const st
                 cout << "Puzzle Solved Written(over total): " << total_success_write << "/" << num_puzzles << endl;
             }
         }
+        // Deallocate memory for the sudoku board after it is no longer needed
+        deallocateBoard(sudoku);   // Free memory allocated for the board
+        sudoku = nullptr;          // Prevent dangling pointer (good practice)
     }
 }
+
 
 
 /**
@@ -320,7 +332,6 @@ void compareSudokuSolvers(const int& experiment_size, const int& empty_boxes) {
             cerr << "solveBoardEfficient produced an invalid solution.\n";
         }
 
-
         // -------------------- Testing solveBoard --------------------
         auto startSolve = high_resolution_clock::now();
         solved = solve(board2);  // Solve using basic solver
@@ -338,6 +349,13 @@ void compareSudokuSolvers(const int& experiment_size, const int& empty_boxes) {
 
         // -------------------- Progress Bar Update --------------------
         displayProgressBar(i, experiment_size);
+
+        // Deallocate memory for both boards after each experiment
+        deallocateBoard(board1);   // Free memory allocated for board1
+        board1 = nullptr;          // Prevent dangling pointer
+
+        deallocateBoard(board2);   // Free memory allocated for board2
+        board2 = nullptr;          // Prevent dangling pointer
     }
 
     cout << endl;  // Move to the next line after progress bar is done.
@@ -359,4 +377,3 @@ void compareSudokuSolvers(const int& experiment_size, const int& empty_boxes) {
 
     cout << "===========================================================================" << endl;
 }
-

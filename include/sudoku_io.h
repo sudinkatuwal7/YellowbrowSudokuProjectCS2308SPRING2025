@@ -1,3 +1,7 @@
+//Group name: YellowbrowSudokuProjectCS2308SPRING2025
+//Members: Sudin Katuwal, Sugam Pandey, Nischal Rimal
+
+
 /**
  * @file sudoku_io.h
  * @brief Input/Output utility functions for handling Sudoku puzzles.
@@ -26,6 +30,8 @@
 #include <vector>
 #include <string>
 using namespace std;
+
+// ... (other function prototypes unchanged) ...
 
 /**
  * @brief Prints the Sudoku board to the console with highlighting.
@@ -136,10 +142,12 @@ vector<string> getAllSudokuInFolder(const string& folderPath);
 /**
  * @brief Generates and saves multiple Sudoku puzzles.
  *
- * Generates `num_puzzles` new Sudoku boards and saves them as text files
- * in the specified destination folder with filenames prefixed by `prefix`.
+ * Generates `num_puzzles` new Sudoku boards with the specified number of empty boxes,
+ * and saves them as text files in the specified destination folder with filenames
+ * prefixed by `prefix`.
  *
  * @param num_puzzles The number of puzzles to generate.
+ * @param complexity_empty_boxes Number of empty cells in each puzzle.
  * @param destination Folder where the puzzles will be saved.
  * @param prefix Filename prefix for the saved puzzles.
  */
@@ -176,5 +184,14 @@ int** deepCopyBoard(int** original);
  * @param empty_boxes Number of empty cells in the generated Sudoku board.
  */
 void compareSudokuSolvers(const int& experiment_size, const int& empty_boxes);
+
+/**
+ * @brief Deallocates a dynamically allocated 9x9 Sudoku board.
+ *
+ * Frees all memory used by the 2D board allocated with new[].
+ *
+ * @param BOARD The pointer to the 2D Sudoku board (int**) to deallocate.
+ */
+void deallocateBoard(int** board);
 
 #endif //SUDOKUPROJECT_SUDOKUIO_H

@@ -1,3 +1,8 @@
+//Group name: YellowbrowSudokuProjectCS2308SPRING2025
+//Members: Sudin Katuwal, Sugam Pandey, Nischal Rimal
+
+
+// utils.cpp
 //
 // Created by Keshav Bhandari on 2/8/24.
 //
@@ -6,7 +11,7 @@
 #include <filesystem>
 using namespace std;
 
-void deallocateBoard(int** BOARD, const int& rows) {
+void deallocatingBoard(int** BOARD, const int& rows) {
     // TODO: Implement memory deallocation for the 2D board
 
     /**
@@ -15,6 +20,14 @@ void deallocateBoard(int** BOARD, const int& rows) {
      * - Deallocate the array of row pointers using delete[].
      * - Set BOARD to nullptr to avoid dangling pointers.
      */
+
+    if (BOARD == nullptr) return;
+
+    for (int i = 0; i < rows; ++i) {
+        delete[] BOARD[i];
+    }
+    delete[] BOARD;
+    BOARD = nullptr;
 }
 
 void createFolder(const std::string& folderPath) {

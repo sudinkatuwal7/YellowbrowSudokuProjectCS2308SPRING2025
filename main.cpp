@@ -1,3 +1,6 @@
+//Group name: YellowbrowSudokuProjectCS2308SPRING2025
+//Members: Sudin Katuwal, Sugam Pandey, Nischal Rimal
+
 #include "include/generator.h"
 #include "include/sudoku.h"
 #include "include/sudoku_io.h"
@@ -75,3 +78,5 @@ int main() {
     return 0;
 }
 #endif
+
+//This is how a beautiful coding story ends!

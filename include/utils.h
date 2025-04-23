@@ -1,4 +1,8 @@
-/**
+//Group name: YellowbrowSudokuProjectCS2308SPRING2025
+//Members: Sudin Katuwal, Sugam Pandey, Nischal Rimal
+
+
+  /**
  * @file utils.h
  * @brief Utility functions for Sudoku board management and file system operations.
  *
@@ -24,9 +28,15 @@
 using namespace std;
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
-  */
-void deallocateBoard(int** BOARD, const int& rows = 9);
+ * @brief Deallocates memory for a dynamically allocated 2D Sudoku board.
+ *
+ * Frees the memory allocated for each row and then the array of row pointers.
+ * Safeguards against deallocating a nullptr and resets the pointer to avoid dangling.
+ *
+ * @param BOARD Pointer to the 2D board to be deallocated.
+ * @param rows Number of rows in the board (default is 9).
+ */
+void deallocatingBoard(int** BOARD, const int& rows = 9);
 
 /**
  * @brief Creates a folder at the specified path if it does not exist.
