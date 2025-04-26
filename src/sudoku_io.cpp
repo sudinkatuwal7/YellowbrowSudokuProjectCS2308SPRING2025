@@ -1,5 +1,5 @@
 //Group name: YellowbrowSudokuProjectCS2308SPRING2025
-//Members: Sudin Katuwal, Sugam Pandey, Nischal Rimal
+//Members: Sudin Katuwal, Sugam Pandey, Nischal Rimal, Mandip Bastola
 
 
 //

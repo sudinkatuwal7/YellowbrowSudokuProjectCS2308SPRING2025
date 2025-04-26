@@ -1,5 +1,5 @@
 //Group name: YellowbrowSudokuProjectCS2308SPRING2025
-//Members: Sudin Katuwal, Sugam Pandey, Nischal Rimal
+//Members: Sudin Katuwal, Sugam Pandey, Nischal Rimal, Mandip Bastola
 
 #include "include/generator.h"
 #include "include/sudoku.h"
@@ -10,7 +10,7 @@
 using namespace std;
 
 // Define DEBUG_MODE to enable debug main, comment following to run the actual program
-#define DEBUG_MODE
+//#define DEBUG_MODE
 
 string PATH_TO_PUZZLES = "data/puzzles/";
 string PATH_TO_SOLUTIONS = "data/solutions/";
